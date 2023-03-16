@@ -8,50 +8,67 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
   <title>All Data</title>
+
+
 </head>
 <style>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #eee;
+  }
+
+  .data {
+    height: 10vh;
+    width: 450px;
+    background: #F6F7C1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px 2px red;
+    margin: 50px 10px 0;
+    border-radius: 10px;
+    font-size: 3rem;
+    font-family: 'Indie Flower', cursive;
+    text-decoration: none;
 
 
-}
+  }
 
-.data {
-  height: 10vh;
-  width: 450px;
-  background: #F6F7C1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 1px 1px 10px 2px red;
-  margin: 10px;
-  border-radius: 10px;
-  font-size: 3rem;
-  font-family: 'Indie Flower', cursive;
-  text-decoration: none;
-}
+  .button1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    height: 300px;
+    width: 100%;
+
+  }
+
+  .button1 a {
+    margin-right: 20px;
+  }
 </style>
 
 <body>
-  <?php
-  include "database_connect.php";
-  $query = "SELECT * FROM `newusers`";
-  $results = mysqli_query($connection, $query);
 
-      while ($num = mysqli_fetch_assoc($results)) {
-        echo "<pre class= 'data'>" . $num['username'] . "<br></pre>";
-      }
-  
+
+  <?php //!query to fetch all the result is inside functions.php fil
+  include "functions.php";
+  showAllResults();
   ?>
 
 
-
-  <a class="data" href="./loginForm.php">Go-Back</a>
+  <div class="button1">
+    <a class="btn btn-primary btn-lg" href="./loginForm.php">Add</a>
+    <a class="btn btn-success btn-lg" href="./updateData.php">Update</a>
+  </div>
 
 </body>
 

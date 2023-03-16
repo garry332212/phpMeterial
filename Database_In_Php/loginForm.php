@@ -25,7 +25,7 @@
   <!-- creating a login form using bootstrap for styiling -->
   <div class="container d-flex align-items-center justify-content-center mt-3">
     <div class="col-sm-3">
-      <form action="login.php" method="post">
+      <form action="addUser.php" method="post">
         <div class=" form-group mt-3 ">
           <label for=" username">Username</label>
           <input type="text" class="form-control" name="username" />
@@ -38,25 +38,29 @@
 
         <div id=" emailHelp" class="form-text">We'll never share your details with anyone else.
         </div>
-        <button type="submit" class="btn btn-primary mt-3" name='submit'>Submit</button>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary mt-3" name='submit'>Submit</button>
+
+
+          <a class="btn btn-secondary mt-3" href="./updateData.php">Update</a>
+        </div>
+      </form>
+
+      <br><br>
+      <!-- SEARCH FORM FOR FETCHING FROM DATABSE -->
+      <form action="fetchData.php" method="post">
+        <div class="form-group">
+          <label for="searchUser">Search Users or</label>
+
+          <a href="./showAll.php">Show All Users</a>
+
+          <input type="text" class="form-control" name="search" />
+        </div>
+        <button type="submit" class="btn btn-success mt-3 w-100" name='searchbtn'>Search</button>
+      </form>
 
     </div>
-    </form>
-
-    <br><br>
-    <!-- SEARCH FORM FOR FETCHING FROM DATABSE -->
-    <form action="fetchData.php" method="post">
-      <div class="form-group">
-        <label for="searchUser">Search Users or</label>
-
-        <a href="./showAll.php">Show All Users</a>
-
-        <input type="text" class="form-control" name="search" />
-      </div>
-      <button type="submit" class="btn btn-success mt-3 w-100" name='searchbtn'>Search</button>
-    </form>
-
-  </div>
 
 
 
